@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content="my keywords" />
+        <meta name="description" content="my description" />
+        <title>
+            my title
+        </title>
+        <style>
+            #header{ border:1px solid black; height:60px; line-height:60px; margin-bottom:10px;
+            } #main{ border:1px solid black; min-height:300px; clear:both; }
+        </style>
+    </head>
+    
+    <body>
+        <div id="header">
+            标题
+        </div>
+        <div id="main">
+            <p>
+                问题1：如何调整这个div，使自动填满浏览器下半部分，并能根据浏览器窗口的大小自动调整
+            </p>
+            <p>
+                问题2：在网上找到了一段javascript代码，不知如何应用
+            </p>
+            <p>
+                问题3：如何这个div中显示出ie_h的数值
+            </p>
+            <div>
+                <script language="javascript">
+                    function get_ie_wh() {
+                        var w = document.documentElement.clientWidth; //可见区域宽度
+                        var h = document.documentElement.clientHeight; //可见区域高度
+                        return [w, h];
+                    }
+                </script>
+                <script language="vbs">
+                    dim ie_w,
+                    ie_h wh = split(get_ie_wh(), ",") ie_w = wh(0) ie_h = wh(1)
+                </script>
+            </div>
+        </div>
+    </body>
+
+</html>

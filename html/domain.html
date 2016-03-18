@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content="my keywords" />
+        <meta name="description" content="my description" />
+        <title>
+            my title
+        </title>
+    </head>
+    </script>
+    
+    <body>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td valign="top">
+                </td>
+            </tr>
+        </table>
+        <script>
+            function getDomain() {
+                var partnerdomain=escape(document.domain);
+                host = window.location.host;
+                host2=document.domain;
+                //if(host!="xxx.com") alert("illegal");
+                //alert(partnerdomain + "||" + host + "||" + host2 + "||");
+                
+                document.write('(1)' + partnerdomain + '<br />');
+                document.write('(2)' + host + '<br />');
+                document.write('(3)' + host2 + '<br />');
+                document.write('(4)' + location.hostname + '<br />');
+                document.write('(5)' + location.href.split('/')[2] + '<br />');
+                document.write('(6)' + 'http://www.yahoo.co.jp/'.split('/')[2]);
+                var domainFlg = partnerdomain.indexOf('rakuten.tw');
+                document.write('(7)' + domainFlg);
+                
+                domainFlg = partnerdomain.indexOf('rakuter');
+                
+                
+                
+                
+                document.write('(8)' + domainFlg);
+                
+                domainStr=document.domain;
+                var domainFlg = domainStr.indexOf('rakuten.tw');
+                if ( domainFlg < 0 ){
+                    alert("Who are you?");
+                }
+            }
+            getDomain();
+        </script>
+    </body>
+</html>

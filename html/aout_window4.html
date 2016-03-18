@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content="my keywords" />
+        <meta name="description" content="my description" />
+        <title>my title </title>
+        <meta name="Generator" content="EditPlus" />
+        <meta name="Author" content="" />
+        <meta name="Keywords" content="" />
+        <meta name="Description" content="" />
+    </head>
+    <body style="margin:0;">
+        <div id="mydiv" style="border:1 solid black; background-color:red">aaaaaaaa </div>
+        <script type="text/javascript">
+            var mydiv = document.getElementById("mydiv");
+            var mydiv_resize = function() {
+                mydiv.style.width = document.body.clientWidth;
+                mydiv.style.height = document.body.clientHeight;
+            }
+            mydiv_resize();
+            window.onresize = mydiv_resize;
+        </script>
+    </body>
+</html>
