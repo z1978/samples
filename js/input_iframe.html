@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content="Input IFRAME" />
+        <meta name="description" content="Input IFRAME sample" />
+        <title>
+            Input IFRAME
+        </title>
+    </head>
+    
+    <body>
+        <script type="text/javascript">
+            // *********************************************************
+            // 関数
+            // *********************************************************
+            function doAction(strValue,srtUrl) {
+
+                var base;
+                var obj;
+
+                base = document.getElementById(strValue);
+                base.innerHTML = "";
+
+                // IFRAME 作成
+                obj = document.createElement("iframe");
+                // IFRAME の見栄え属性をセット
+                obj.setAttribute("frameBorder", "1");
+                obj.setAttribute("scrolling", "no");
+
+                // IFRAME の配置属性をセット
+                obj.style.position = "relative";
+                obj.style.width = "100%";
+                obj.style.height = "1000px";
+
+                // IFRAME の内容をセット
+                obj.src = document.getElementById("url").value;
+                var aaaa = document.getElementById("url").value;
+                //obj.src = srtUrl;
+
+                // IFRAME を実装
+                base.appendChild(obj);
+
+            }
+        </script>
+        <input type="button" value="Input" onclick='doAction( "new" );'>
+        <br>
+        <input type="text" id="url" value="http://winofsql.jp/" style="width:400px;">
+        <div id="new">
+        </div>
+    </body>
+
+</html>
