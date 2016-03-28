@@ -1,0 +1,16 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script type="text/javascript">  
+var MYORIGIN = location.protocol + "//" + location.host;  
+window.addEventListener("message", function(e) {  
+var data = eval("(" + e.data + ")");  
+if(e.origin == MYORIGIN) {  
+document.body.innerHTML = data.date + "," + data.number;  
+}  
+}, false);  
+</script>  
+</head>  
+<body>  
+</body>  
+</html>  

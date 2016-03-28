@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="UTF-8">  
+<title>メッセージングのサンプル</title>  
+<script type="text/javascript">  
+var MYORIGIN = location.protocol + "//" + location.host;  
+function init() {
+	var iframe = document.getElementsByTagName("iframe")[0];
+	//var keyword=iframe.document.getElementById("kw");
+	var iframe2 = document.getElementsByTagName("iframe")[1];
+
+
+	//var keyword2=iframe.document.getElementById("test");
+	var ifmWin1 = window.top.document.getElementById("iframe1").contentWindow;
+	var ifmWin2 = window.top.document.getElementById("iframe2").contentWindow;
+	var keyword = ifmWin2.document.getElementById("test");
+	ifmWin2.document.getElementById("test").value = "あああ";
+
+	document.getElementById("iframe2").contentWindow.test = "aaa"
+	ifmWin2.document.getElementById("test").innerHTML = "bbb"
+	ifmWin2.document.getElementById("test").innerHTML = "ccc"
+	ifmWin2.document.getElementById("test2").innerHTML = "ddd"
+	ifmWin2.document.getElementById("test2").value = "L1kljdsafd";
+	ifmWin1.document.getElementById("kw").value = "eee";
+
+
+	console.log('%chello world','font-size:25px;color:red;');
+}  
+</script>  
+<body onload="init()">  
+<div id="msg"></div>  
+<iframe id=iframe1 src="http://www.baidu.com/" width="500" height="200"></iframe>
+<iframe id=iframe2 src="sub.html" width="500" height="200"></iframe>
+</body>  
+</html>  
