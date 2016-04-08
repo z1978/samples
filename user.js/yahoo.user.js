@@ -6,4 +6,12 @@
 // @exclude     http://www.yahoo.co.jp/code/*
 // ==/UserScript==
 
-alert("Hello Yahoo!");
+// Yahoo 検索
+var script04 = document.createElement('script');
+script04.innerHTML = 'function autoInput(){document.getElementById("srchtxt").value="yahoo";}'
+script04.innerHTML = script04.innerHTML + 'function clickBtn(){autoInput();	document.getElementById("srchbtn").click();}';
+document.body.appendChild(script04);
+
+var strButton='<form><input type="button"  value="My Button" onclick="clickBtn()"></form>';
+var testdiv = document.getElementById("searchbox");
+testdiv.innerHTML=testdiv.innerHTML + strButton;
