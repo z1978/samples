@@ -1,3 +1,6 @@
+# common parameter
 CONST_USER="root"
 CONST_PASSWD="12345678"
 CONST_SERVER_HOSTNAME="123.56.94.137"
+
+RESULT_FILE_DIR=z_result.txt
