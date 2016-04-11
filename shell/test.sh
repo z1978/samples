@@ -8,8 +8,8 @@ echo ${CONST_SERVER_HOSTNAME}
 # export command function
 . ./common_function.sh
 
-auto_command ls ${RESULT_FILE_DIR}
-
+var_command="hostname"
+auto_command ${CONST_USER} ${CONST_PWD} ${CONST_DB_SERVER_HOSTNAME} ${RESULT_FILE_DIR} ${var_command}
 cat ${RESULT_FILE_DIR}
 
 exit 0
