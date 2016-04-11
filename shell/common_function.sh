@@ -33,11 +33,24 @@ EOF
 # auto command
 #--------------------------------------------------
 function auto_command (){
-	var_command=$1
-	var_output_file_dir=$2
+	var_user=$1
+	var_password=$2
+	var_server_hostname=$3
+	var_output_file_dir=$4
+	var_command=$5
 	
-	if [ ! -n "${var_command}" ]; then
-		echo "var_command IS NULL"
+	if [ ! -n "${var_user}" ]; then
+		echo "var_user IS NULL"
+		exit 1
+	fi
+
+	if [ ! -n "${var_password}" ]; then
+		echo "var_password IS NULL"
+		exit 1
+	fi
+
+	if [ ! -n "${var_server_hostname}" ]; then
+		echo "var_server_hostname IS NULL"
 		exit 1
 	fi
 
@@ -45,16 +58,13 @@ function auto_command (){
 		echo "var_output_file_dir IS NULL"
 		exit 1
 	fi
-
-	if [ -n "$3" ] && [ -n "$4" ] && [ -n "$5" ]; then
-		CONST_USER=$3
-		CONST_PASSWD=$4
-		CONST_SERVER_HOSTNAME=$5
-	else
-		echo "You will use default settings."
-	fi
 	
-	echo "Are you really execute the command [${var_command}] in [${CONST_SERVER_HOSTNAME}]?"
+	if [ ! -n "${var_command}" ]; then
+		echo "var_command IS NULL"
+		exit 1
+	fi
+
+	echo "Are you really execute the command [${var_command}] in [${var_server_hostname}]?"
 	# yes no dialog
 	yesno
 	if [ "$yes_or_no" == "yes" ]; then
@@ -64,5 +74,5 @@ function auto_command (){
 		exit 0
 	fi
 		
-	expect_auto_password "ssh ${CONST_USER}@${CONST_SERVER_HOSTNAME} ${var_command}" "${CONST_PASSWD}" > ${var_output_file_dir}
+	expect_auto_password "ssh ${var_user}@${var_server_hostname} ${var_command}" "${var_password}" > ${var_output_file_dir}
 }
